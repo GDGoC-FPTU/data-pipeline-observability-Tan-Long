@@ -2,13 +2,13 @@
 # Day 10 Lab: Data Pipeline & Data Observability
 
 **Student Email:** email@example.com
-**Name:** (Dien ten cua ban)
+**Name:** Tan Long
 
 ---
 
 ## Mo ta
 
-(Mo ta ngan gon bai lab va nhung gi ban da lam)
+Bai lab xay dung mot ETL Pipeline tu dong doc du lieu JSON, kiem tra chat luong du lieu (loai bo gia am va category rong), chuan hoa danh muc sang Title Case, tinh gia giam 10%, va luu ket qua ra CSV. Sau do chay Agent Simulation de so sanh ket qua khi su dung Clean Data va Garbage Data.
 
 ---
 
@@ -26,7 +26,11 @@ python solution.py
 
 ### Chay Agent Simulation (Stress Test)
 ```bash
-# Mo ta cach ban chay thi nghiem Clean vs Garbage data
+# Buoc 1: Tao garbage data
+python generate_garbage.py
+
+# Buoc 2: Chay Agent voi ca 2 bo du lieu
+python agent_simulation.py
 ```
 
 ---
@@ -44,4 +48,8 @@ python solution.py
 
 ## Ket qua
 
-(Tom tat ket qua: bao nhieu records da xu ly, bao nhieu bi loai, v.v.)
+- Tong so records trong `raw_data.json`: **5**
+- Records hop le sau Validate: **3** (loai 2 records: gia am + category rong)
+- Records da luu vao `processed_data.csv`: **3**
+- Agent voi Clean Data: tra loi chinh xac (Laptop $1200)
+- Agent voi Garbage Data: tra loi sai do outlier (Nuclear Reactor $999,999)
